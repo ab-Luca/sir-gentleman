@@ -1,0 +1,69 @@
+/* Taken from the storefront: black windows, gold crest lettering, red white and blue barber stripes. */
+:root { --gold:#d6a84e; --accent:#d6a84e; --ink:#f3efe6; --muted:#b5ad9c; --bg:#0f0f0f; --soft:#1c1b19; --line:#2e2c28; --card:#171614; --header-bg:#0f0f0f; --red:#c8312f; --blue:#23509a; }
+* { box-sizing:border-box; margin:0; padding:0; }
+body { background:var(--bg); color:var(--ink); font:16px/1.6 "Inter", system-ui, sans-serif; }
+a { color:inherit; }
+img { display:block; max-width:100%; }
+.preview { background:#fff3c4; color:#5a4500; text-align:center; font-size:13px; padding:6px 16px; }
+.wrap { max-width:1080px; margin:0 auto; padding:0 20px; }
+.stripe { height:8px; background:repeating-linear-gradient(135deg, var(--red) 0 14px, #fff 14px 28px, var(--blue) 28px 42px, #fff 42px 56px); }
+
+.brand { text-decoration:none; font-family:"Cinzel", serif; font-weight:700; font-size:20px; letter-spacing:1px; color:var(--gold); line-height:1.1; }
+.brand small { display:block; font-family:"Inter", sans-serif; font-weight:600; font-size:10px; letter-spacing:3px; color:var(--muted); }
+
+.hero { display:grid; grid-template-columns:1.1fr 1fr; gap:40px; align-items:center; padding-top:48px; padding-bottom:56px; }
+.hero h1 { font-family:"Cinzel", serif; font-weight:700; font-size:clamp(40px, 6.5vw, 70px); line-height:1.05; color:var(--gold); }
+.hero h1 span { display:block; font-size:.45em; letter-spacing:6px; color:var(--ink); margin-top:8px; }
+.hero p { color:var(--muted); font-size:18px; margin:18px 0; max-width:480px; }
+.hero .status { margin-bottom:22px; background:var(--soft); }
+.hero img { width:100%; aspect-ratio:4/5; object-fit:cover; border-radius:6px; border:1px solid var(--line); }
+.btn { display:inline-block; padding:13px 24px; border-radius:4px; font-weight:700; text-decoration:none; margin:0 8px 8px 0; }
+.btn.gold { background:var(--gold); color:#111; }
+.btn.line { border:2px solid var(--gold); color:var(--gold); }
+
+section { padding:64px 0; }
+.band { background:var(--soft); border-top:1px solid var(--line); border-bottom:1px solid var(--line); }
+h2 { font-family:"Cinzel", serif; font-weight:700; font-size:32px; color:var(--gold); margin-bottom:6px; }
+h2 + .sub { color:var(--muted); margin-bottom:24px; }
+
+.prices { display:grid; grid-template-columns:repeat(3, 1fr); gap:14px; }
+.price { background:var(--card); border:1px solid var(--line); border-top:3px solid var(--gold); border-radius:6px; padding:22px; }
+.price b { display:block; font-size:18px; }
+.price .amt { font-family:"Cinzel", serif; font-size:40px; color:var(--gold); line-height:1.1; margin:8px 0 4px; }
+.price span { color:var(--muted); font-size:14px; }
+.tags { display:flex; flex-wrap:wrap; gap:8px; margin-top:18px; }
+.tags span { border:1px solid var(--line); border-radius:99px; padding:5px 14px; font-size:14px; font-weight:600; }
+.note { color:var(--muted); font-size:15px; margin-top:14px; }
+.note a { color:var(--gold); }
+
+.gallery { display:grid; grid-template-columns:repeat(4, 1fr); gap:12px; }
+.gallery img { width:100%; aspect-ratio:4/5; object-fit:cover; border-radius:6px; }
+
+.visit { display:grid; grid-template-columns:1fr 1fr; gap:34px; align-items:start; }
+table { width:100%; border-collapse:collapse; margin-top:8px; }
+td { padding:9px 0; border-bottom:1px solid var(--line); }
+td:last-child { text-align:right; }
+iframe { width:100%; height:360px; border:0; border-radius:6px; filter:grayscale(.3); }
+.phones a { color:var(--gold); font-weight:700; text-decoration:none; }
+
+footer { border-top:1px solid var(--line); padding:30px 0 90px; color:var(--muted); font-size:14px; }
+footer .wrap { display:flex; flex-wrap:wrap; justify-content:space-between; gap:12px; }
+footer nav a { margin-left:16px; }
+
+.legal { max-width:760px; padding:48px 20px 90px; margin:0 auto; }
+.legal h1 { font-family:"Cinzel", serif; font-size:38px; color:var(--gold); margin-bottom:6px; }
+.legal h2 { font-family:"Inter", sans-serif; font-size:20px; color:var(--ink); margin:30px 0 8px; }
+.legal p, .legal li { color:#d9d3c6; margin-bottom:10px; }
+.legal ul { padding-left:20px; }
+.legal a { color:var(--gold); }
+
+.copy-btn { color:var(--ink); }
+.sticky { position:fixed; bottom:0; left:0; right:0; display:none; background:var(--gold); color:#111; text-align:center; padding:15px; font-weight:700; text-decoration:none; z-index:40; }
+@media (max-width:760px) {
+  .hero, .visit { grid-template-columns:1fr; }
+  .hero { padding-top:28px; padding-bottom:36px; }
+  .prices { grid-template-columns:1fr; }
+  .gallery { grid-template-columns:1fr 1fr; gap:8px; }
+  .sticky { display:block; }
+  footer nav a { margin:0 16px 0 0; }
+}
